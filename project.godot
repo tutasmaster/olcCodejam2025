@@ -11,25 +11,34 @@ config_version=5
 [application]
 
 config/name="olcCodejam2025"
-run/main_scene="uid://sankcxfhs3wg"
+run/main_scene="uid://b3vsjxb45kjo1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*res://Scripts/GameData.gd"
-GameManager="*res://Scripts/Managers/GameManager.gd"
-AudioManager="*res://Scripts/Managers/AudioManager.gd"
+Game="*res://Scripts/Managers/Game.gd"
+Audio="*res://Scripts/Managers/Audio.gd"
+HorseFactory="*res://Scripts/Managers/HorseFactory.gd"
 
 [debug_draw_3d]
 
 settings/addon_root_folder="res://addons/debug_draw_3d"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [file_customization]
 
 folder_colors={
 "res://Scripts/": "blue"
 }
+
+[filesystem]
+
+import/blender/enabled=false
 
 [gui]
 

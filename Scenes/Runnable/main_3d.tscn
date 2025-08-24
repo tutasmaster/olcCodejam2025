@@ -1,0 +1,701 @@
+[gd_scene load_steps=41 format=3 uid="uid://b3vsjxb45kjo1"]
+
+[ext_resource type="Script" uid="uid://bhee8g0w85lf0" path="res://Scripts/3D/World.gd" id="1_mtdim"]
+[ext_resource type="PackedScene" uid="uid://nb0sku0wb7su" path="res://Assets/Models/Circuit.fbx" id="2_mtdim"]
+[ext_resource type="PackedScene" uid="uid://bgctv071xdjof" path="res://Scenes/3D/Horse.tscn" id="3_l7yqx"]
+[ext_resource type="FontFile" uid="uid://br3ivsykeej7a" path="res://Themes/CQ Mono.otf" id="4_n6u56"]
+[ext_resource type="Script" uid="uid://dfrwudaishopw" path="res://Scripts/Managers/UI.gd" id="6_bwe33"]
+[ext_resource type="Script" uid="uid://b7t6f32chlkqj" path="res://Scripts/Transition.gd" id="6_usmsm"]
+[ext_resource type="PackedScene" uid="uid://tnftga14fdsr" path="res://Assets/Models/Addons.fbx" id="7_l7yqx"]
+[ext_resource type="Texture2D" uid="uid://dt6222wwb66h" path="res://Assets/Textures/Side.png" id="8_05ckb"]
+[ext_resource type="Script" uid="uid://cfx4o35aw3k4c" path="res://Scripts/Cutscene.gd" id="9_05ckb"]
+
+[sub_resource type="Curve3D" id="Curve3D_mtdim"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -25, 0, 0, 0, 0, 0, 0, 0, 12.5, -25, 0, 25, -12.5, 0, 0, 12.5, 0, 0, 0, 0, 50, 0, 0, 12.5, 0, 0, 0, 25, 0, 25, 0, 0, 0, 0, 0, -12.5, 25, 0, -25, 12.5, 0, 0, -12.5, 0, 0, 0, 0, -50, 0, 0, -12.5, 0, 0, 0, -25, 0, -25, 0, 0, 0, 0, 0, 0, -25, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mtdim"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ydij8"]
+sky_material = SubResource("ProceduralSkyMaterial_mtdim")
+
+[sub_resource type="Environment" id="Environment_n6u56"]
+background_mode = 2
+sky = SubResource("Sky_ydij8")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bwe33"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7yqx"]
+albedo_color = Color(0.172609, 0.192494, 0.0822244, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6u56"]
+albedo_color = Color(0.884777, 0.521904, 3.85046e-07, 1)
+metallic = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwe33"]
+
+[sub_resource type="TextMesh" id="TextMesh_l7yqx"]
+material = SubResource("StandardMaterial3D_bwe33")
+text = "HORSE"
+font = ExtResource("4_n6u56")
+font_size = 47
+autowrap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crfl2"]
+albedo_color = Color(0.652284, 0.614817, 0.579908, 1)
+metallic = 0.6
+
+[sub_resource type="TextMesh" id="TextMesh_05ckb"]
+material = SubResource("StandardMaterial3D_bwe33")
+text = "HORSE"
+font = ExtResource("4_n6u56")
+font_size = 47
+autowrap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usmsm"]
+albedo_color = Color(0.533359, 0.34165, 0.282931, 1)
+metallic = 0.6
+
+[sub_resource type="TextMesh" id="TextMesh_4ca4q"]
+material = SubResource("StandardMaterial3D_bwe33")
+text = "HORSE"
+font = ExtResource("4_n6u56")
+font_size = 47
+autowrap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05ckb"]
+albedo_color = Color(0.0941801, 0.0615362, 0.0315334, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ca4q"]
+albedo_color = Color(0.0941801, 0.0615362, 0.0315334, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snkph"]
+albedo_color = Color(0.391924, 0.239265, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_usmsm"]
+font_size = 70
+
+[sub_resource type="Animation" id="Animation_bwe33"]
+resource_name = "Transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(422.472, -1245), Vector2(-886, 823)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(475.472, -1345), Vector2(-648, 397)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(507.472, -1421), Vector2(-653, 384)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"sendTransition"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect3:layout_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect2:layout_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:layout_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_l7yqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(758, -1044)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(811, -1144)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(843, -1220)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect3:layout_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect2:layout_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:layout_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05ckb"]
+_data = {
+&"RESET": SubResource("Animation_l7yqx"),
+&"Transition": SubResource("Animation_bwe33")
+}
+
+[sub_resource type="Gradient" id="Gradient_4ca4q"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.610785, 0.230899, 0.230909, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_snkph"]
+gradient = SubResource("Gradient_4ca4q")
+
+[sub_resource type="Gradient" id="Gradient_t31ro"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.756318, 0.562417, 1.92523e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8twrv"]
+gradient = SubResource("Gradient_t31ro")
+
+[sub_resource type="Gradient" id="Gradient_wqqod"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0.839186, 0.571736, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6coux"]
+gradient = SubResource("Gradient_wqqod")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t31ro"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("8_05ckb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8twrv"]
+cull_mode = 2
+albedo_color = Color(0.155661, 0.254911, 0.103026, 1)
+metallic = 1.0
+metallic_specular = 0.55
+
+[sub_resource type="Animation" id="Animation_4ca4q"]
+resource_name = "intro"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 7, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-60.6194, 4.05642, 13.3554), Vector3(-60.6194, 4.05642, 13.3554), Vector3(-39.5985, 4.05642, 13.8964), Vector3(-33.1896, 4.13832, 1.88125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.03333, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.00515746, -0.0131576, 0), Vector3(-0.00356918, 1.58824, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(11.0333, 13.0333, 14.0667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"swapToCameraTwo"
+}, {
+"args": [],
+"method": &"endCutscene"
+}, {
+"args": [],
+"method": &"swapToFinalCamera"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_snkph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-60.6194, 4.05642, 13.3554)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00515746, -0.0131576, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t31ro"]
+_data = {
+&"RESET": SubResource("Animation_snkph"),
+&"intro": SubResource("Animation_4ca4q")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_mtdim")
+
+[node name="PATH" type="Path3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+curve = SubResource("Curve3D_mtdim")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="PATH"]
+transform = Transform3D(-0.999992, 0, -8.74221e-08, 0, 1, 0, 8.74221e-08, 0, -0.999992, -25, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="PATH/PathFollow3D"]
+transform = Transform3D(-0.397745, -0.0936312, 0.28817, 0, 0.475533, 0.154511, -0.303, 0.122909, -0.378277, 8.38914, 4.3575, -11.443)
+current = true
+fov = 43.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n6u56")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.938972, -0.0784571, 0.334927, 0.052014, 0.930066, 0.363691, -0.340038, 0.358916, -0.869226, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_max_distance = 70.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_bwe33")
+surface_material_override/0 = SubResource("StandardMaterial3D_l7yqx")
+
+[node name="START" type="Node3D" parent="."]
+
+[node name="END" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+
+[node name="HORSES" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.0157074, 0.999877, 4.3706e-08, 0, -4.37114e-08, 1, 0.999877, 0.0157074, 6.86591e-10, -11.1805, 69.946, 0)
+projection = 1
+size = 98.025
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(0.801242, 0.250067, -0.543578, 0, 0.908477, 0.417935, 0.59834, -0.334867, 0.72791, -36.4195, 11.2263, 28.9941)
+fov = 73.5
+size = 98.025
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Circuit" parent="." instance=ExtResource("2_mtdim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0141663, 0)
+
+[node name="HORSE_PODIUM" type="Node3D" parent="."]
+transform = Transform3D(-0.729219, 0, 0.68428, 0, 1, 0, -0.68428, 0, -0.729219, -6.52768, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="HORSE_PODIUM"]
+transform = Transform3D(0.945774, 0, 0.324825, 0, 1, 0, -0.324825, 0, 0.945774, -0.685128, 0.600679, 1.85403)
+radius = 3.221
+height = 3.73779
+material = SubResource("StandardMaterial3D_n6u56")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HORSE_PODIUM/CSGCylinder3D"]
+transform = Transform3D(0.905976, 0, 0.42333, 0, 1, 0, -0.42333, 0, 0.905976, 1.06346, 1.30832, 3.0519)
+mesh = SubResource("TextMesh_l7yqx")
+skeleton = NodePath("../..")
+
+[node name="Horse" parent="HORSE_PODIUM/CSGCylinder3D" instance=ExtResource("3_l7yqx")]
+transform = Transform3D(-0.986529, 0, 0.163584, 0, 1, 0, -0.163584, 0, -0.986529, 0.467623, 1.77214, 0.74767)
+isDummy = true
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="HORSE_PODIUM"]
+transform = Transform3D(0.966264, 0, 0.257554, 0, 1, 0, -0.257554, 0, 0.966264, -6.78871, -0.0668952, 3.00518)
+radius = 3.066
+height = 3.73779
+material = SubResource("StandardMaterial3D_crfl2")
+
+[node name="Horse" parent="HORSE_PODIUM/CSGCylinder3D2" instance=ExtResource("3_l7yqx")]
+transform = Transform3D(-0.966264, 0, 0.257554, 0, 1, 0, -0.257554, 0, -0.966264, -0.339049, 1.77695, 0.925197)
+isDummy = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="HORSE_PODIUM/CSGCylinder3D2"]
+transform = Transform3D(0.942204, 0, 0.335041, 0, 1, 0, -0.335041, 0, 0.942204, 1.20541, 1.4059, 2.65174)
+mesh = SubResource("TextMesh_05ckb")
+skeleton = NodePath("../..")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="HORSE_PODIUM"]
+transform = Transform3D(0.924393, 0, -0.381441, 0, 1, 0, 0.381441, 0, 0.924393, -12.762, -0.958, 5.245)
+radius = 2.761
+height = 3.73779
+material = SubResource("StandardMaterial3D_usmsm")
+
+[node name="Horse" parent="HORSE_PODIUM/CSGCylinder3D3" instance=ExtResource("3_l7yqx")]
+transform = Transform3D(-0.996094, 0, -0.0883031, 0, 1, 0, 0.0883031, 0, -0.996094, -0.0304036, 2.08668, 0.438392)
+isDummy = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="HORSE_PODIUM/CSGCylinder3D3"]
+transform = Transform3D(0.0884945, 0, 0.996077, 0, 1, 0, -0.996077, 0, 0.0884945, 2.67003, 1.55695, 0.888282)
+mesh = SubResource("TextMesh_4ca4q")
+skeleton = NodePath("../..")
+
+[node name="CAMERA" type="Camera3D" parent="HORSE_PODIUM"]
+transform = Transform3D(0.622515, -0.118378, 0.773603, 0, 0.988494, 0.151261, -0.782608, -0.0941621, 0.615352, 4.983, 4.90826, 9.837)
+current = true
+fov = 57.0
+
+[node name="HORSE_STABLE" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.149, 2.74078, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="HORSE_STABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72537, 0, 4.50156)
+size = Vector3(0.5, 6.482, 0.5)
+material = SubResource("StandardMaterial3D_05ckb")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="HORSE_STABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10776, 0, 4.50156)
+size = Vector3(0.5, 6.482, 0.5)
+material = SubResource("StandardMaterial3D_05ckb")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="HORSE_STABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72537, 0, -9.99981)
+size = Vector3(0.5, 6.482, 0.5)
+material = SubResource("StandardMaterial3D_05ckb")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="HORSE_STABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10776, 0, -9.99981)
+size = Vector3(0.5, 6.482, 0.5)
+material = SubResource("StandardMaterial3D_05ckb")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="HORSE_STABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866577, 3.21949, -2.38942)
+size = Vector3(9.1228, 0.268982, 16.0822)
+material = SubResource("StandardMaterial3D_4ca4q")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="HORSE_STABLE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866577, -2.72506, -2.38942)
+size = Vector3(9.1228, 0.268982, 16.0822)
+material = SubResource("StandardMaterial3D_snkph")
+
+[node name="Camera3D" type="Camera3D" parent="HORSE_STABLE"]
+transform = Transform3D(-0.562083, -0.214064, 0.798899, 0, 0.965926, 0.258819, -0.827081, 0.145478, -0.542931, 8.593, 3.581, -10.965)
+fov = 48.8
+
+[node name="Horse" parent="HORSE_STABLE" instance=ExtResource("3_l7yqx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -4.14, 0)
+isDummy = true
+dummy_anim = "ARM|IdleBed"
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_bwe33")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="TextEdit" type="LineEdit" parent="UI/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 19.32)
+layout_mode = 2
+text = "THE RACE HAS STARTED"
+editable = false
+
+[node name="HORSE_SELECTION_UI" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="UI/HORSE_SELECTION_UI"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 284.0
+offset_right = 240.0
+offset_bottom = 321.0
+text = "PREVIOUS"
+
+[node name="Button2" type="Button" parent="UI/HORSE_SELECTION_UI"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 284.0
+offset_right = 618.0
+offset_bottom = 321.0
+text = "NEXT"
+
+[node name="Label" type="Label" parent="UI/HORSE_SELECTION_UI"]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 68.0
+offset_right = 528.0
+offset_bottom = 142.0
+text = "HORSE_NAME"
+label_settings = SubResource("LabelSettings_usmsm")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HORSE_SELECTION_UI"]
+layout_mode = 2
+offset_left = 701.0
+offset_top = 143.0
+offset_right = 1086.0
+offset_bottom = 519.0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/HORSE_SELECTION_UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HORSE_SELECTION_UI/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 254.355)
+layout_mode = 2
+text = "This horse has the following stats:
+
+Stamina: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/HORSE_SELECTION_UI/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button3" type="Button" parent="UI/HORSE_SELECTION_UI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "BET"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HORSE_SELECTION_UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HORSE_SELECTION_UI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button5" type="Button" parent="UI/HORSE_SELECTION_UI/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "LESS"
+
+[node name="Label" type="Label" parent="UI/HORSE_SELECTION_UI/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "100G"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="UI/HORSE_SELECTION_UI/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "MORE"
+
+[node name="CURRENCY" type="Label" parent="UI/HORSE_SELECTION_UI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "You currently have: XXXXG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UI_TRANSITIONS" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_usmsm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI_TRANSITIONS"]
+libraries = {
+&"": SubResource("AnimationLibrary_05ckb")
+}
+
+[node name="TextureRect" type="TextureRect" parent="UI_TRANSITIONS"]
+layout_mode = 0
+offset_left = 758.0
+offset_top = -1044.0
+offset_right = 2758.0
+offset_bottom = -298.0
+rotation = 0.414549
+texture = SubResource("GradientTexture1D_snkph")
+
+[node name="TextureRect2" type="TextureRect" parent="UI_TRANSITIONS"]
+layout_mode = 0
+offset_left = 811.0
+offset_top = -1144.0
+offset_right = 2811.0
+offset_bottom = -398.0
+rotation = 0.414549
+texture = SubResource("GradientTexture1D_8twrv")
+
+[node name="TextureRect3" type="TextureRect" parent="UI_TRANSITIONS"]
+layout_mode = 0
+offset_left = 843.0
+offset_top = -1220.0
+offset_right = 2843.0
+offset_bottom = -474.0
+rotation = 0.414549
+texture = SubResource("GradientTexture1D_6coux")
+
+[node name="Addons" parent="." instance=ExtResource("7_l7yqx")]
+
+[node name="Cylinder" parent="Addons" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_t31ro")
+surface_material_override/4 = SubResource("StandardMaterial3D_8twrv")
+
+[node name="Cutscene" type="Node3D" parent="."]
+script = ExtResource("9_05ckb")
+
+[node name="Camera3D" type="Camera3D" parent="Cutscene"]
+transform = Transform3D(0.999962, -0.00870242, 6.92952e-06, 0, 0.000796274, 1, -0.00870242, -0.999962, 0.000796244, -50.06, 44.839, 4.857)
+fov = 22.5
+
+[node name="Camera3D3" type="Camera3D" parent="Cutscene"]
+transform = Transform3D(0.999913, -6.78575e-05, -0.013157, 0, 0.999987, -0.00515744, 0.0131572, 0.00515699, 0.9999, -60.6194, 4.05642, 13.3554)
+fov = 33.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene"]
+libraries = {
+&"": SubResource("AnimationLibrary_t31ro")
+}
+
+[connection signal="pressed" from="UI/HORSE_SELECTION_UI/Button" to="UI" method="_on_previous_pressed"]
+[connection signal="pressed" from="UI/HORSE_SELECTION_UI/Button2" to="UI" method="_on_next_pressed"]
+[connection signal="pressed" from="UI/HORSE_SELECTION_UI/VBoxContainer/HBoxContainer2/Button3" to="UI" method="_on_bet_pressed"]
+[connection signal="pressed" from="UI/HORSE_SELECTION_UI/VBoxContainer/VBoxContainer/HBoxContainer/Button5" to="UI" method="_on_decrease_bet_pressed"]
+[connection signal="pressed" from="UI/HORSE_SELECTION_UI/VBoxContainer/VBoxContainer/HBoxContainer/Button4" to="UI" method="_on_increase_bet_pressed"]
+
+[editable path="Addons"]

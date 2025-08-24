@@ -1,1 +1,1 @@
-# olcCodejam2025\n
+# olcCodejam2025

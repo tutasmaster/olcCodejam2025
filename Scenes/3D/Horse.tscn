@@ -1,0 +1,127 @@
+[gd_scene load_steps=12 format=3 uid="uid://bgctv071xdjof"]
+
+[ext_resource type="PackedScene" uid="uid://bow5wehxtblf1" path="res://Assets/Models/Horse.fbx" id="1_0apfu"]
+[ext_resource type="Script" uid="uid://41jbcwdc0h3v" path="res://Scripts/3D/Horse.gd" id="1_rgfrw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgfrw"]
+resource_local_to_scene = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4qwr"]
+resource_local_to_scene = true
+cull_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vervv"]
+resource_local_to_scene = true
+cull_mode = 2
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rgfrw"]
+animation = &"ARM|Idle Podium"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0apfu"]
+animation = &"ARM|Run"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_f4qwr"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_f4qwr"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_vervv"]
+filter_enabled = true
+filters = ["", "ARM/Skeleton3D:Body", "ARM/Skeleton3D:Body.001", "ARM/Skeleton3D:Body.002", "ARM/Skeleton3D:Head", "ARM/Skeleton3D:Leg.BL", "ARM/Skeleton3D:Leg.BL.001", "ARM/Skeleton3D:Leg.BL.002", "ARM/Skeleton3D:Leg.BR", "ARM/Skeleton3D:Leg.BR.001", "ARM/Skeleton3D:Leg.BR.002", "ARM/Skeleton3D:Leg.FL", "ARM/Skeleton3D:Leg.FL.001", "ARM/Skeleton3D:Leg.FL.002", "ARM/Skeleton3D:Leg.FR", "ARM/Skeleton3D:Leg.FR.001", "ARM/Skeleton3D:Leg.FR.002", "ARM/Skeleton3D:Neck", "ARM/Skeleton3D:Neck.001", "ARM/Skeleton3D:Neck.002", "ARM/Skeleton3D:Tail", "ARM/Skeleton3D:Tail.001", "ARM/Skeleton3D:Tail.002"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_18142"]
+graph_offset = Vector2(-534.488, 94.157)
+nodes/IDLE/node = SubResource("AnimationNodeAnimation_rgfrw")
+nodes/IDLE/position = Vector2(-20, 60)
+nodes/RUN/node = SubResource("AnimationNodeAnimation_0apfu")
+nodes/RUN/position = Vector2(-260, 380)
+nodes/RUN_SPEED/node = SubResource("AnimationNodeTimeScale_f4qwr")
+nodes/RUN_SPEED/position = Vector2(140, 300)
+nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_f4qwr")
+nodes/TimeSeek/position = Vector2(-60.3636, 322.727)
+nodes/WALK_SPEED/node = SubResource("AnimationNodeBlend2_vervv")
+nodes/WALK_SPEED/position = Vector2(320, 180)
+nodes/output/position = Vector2(760, 100)
+node_connections = [&"RUN_SPEED", 0, &"TimeSeek", &"TimeSeek", 0, &"RUN", &"WALK_SPEED", 0, &"IDLE", &"WALK_SPEED", 1, &"RUN_SPEED", &"output", 0, &"WALK_SPEED"]
+
+[node name="Horse" type="Node3D"]
+script = ExtResource("1_rgfrw")
+
+[node name="Horse" parent="." instance=ExtResource("1_0apfu")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Horse/ARM" index="0"]
+bones/1/position = Vector3(6.89512e-16, 0.00879462, 1.02225e-10)
+bones/1/rotation = Quaternion(0.0915445, 5.93539e-07, -5.45632e-08, 0.995801)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(-4.57533e-16, 0.00788164, -9.76966e-11)
+bones/2/rotation = Quaternion(0.0641607, -7.13783e-07, -4.58905e-08, 0.99794)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/position = Vector3(-1.56587e-15, 0.00742603, 8.22101e-10)
+bones/3/rotation = Quaternion(-0.594732, 3.83338e-07, 5.67176e-07, 0.803924)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/position = Vector3(2.62825e-15, 0.00440806, 6.15761e-10)
+bones/4/rotation = Quaternion(0.104653, -7.56887e-13, -4.99022e-08, 0.994509)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/position = Vector3(-6.7761e-16, 0.00468443, 5.76501e-10)
+bones/5/rotation = Quaternion(0.0896195, 3.52471e-13, -4.27337e-08, 0.995976)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(-4.51049e-16, 0.00513992, -1.6161e-09)
+bones/6/rotation = Quaternion(0.671424, -3.25993e-13, -3.20158e-07, 0.741074)
+bones/6/scale = Vector3(1, 1, 1)
+bones/8/position = Vector3(0.00256038, 0.00937528, 0.00649999)
+bones/8/rotation = Quaternion(0.676864, -0.121418, -0.114635, 0.716918)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(-8.15964e-11, 0.00856791, 4.99224e-10)
+bones/9/rotation = Quaternion(-0.0691832, 4.47656e-08, 0.024126, 0.997312)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/position = Vector3(1.35235e-10, 0.00751826, -1.20128e-09)
+bones/10/rotation = Quaternion(-0.155542, 2.26613e-08, 0.0542416, 0.986339)
+bones/10/scale = Vector3(1, 1, 1)
+bones/12/position = Vector3(-0.00256037, 0.00937528, 0.00649999)
+bones/12/rotation = Quaternion(0.676864, -0.121418, -0.114635, 0.716918)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/position = Vector3(3.0037e-10, 0.00856791, 1.16773e-09)
+bones/13/rotation = Quaternion(-0.0691832, 1.99023e-08, 0.024126, 0.997312)
+bones/14/position = Vector3(2.81524e-10, 0.00751826, -4.32985e-10)
+bones/14/rotation = Quaternion(-0.155542, 6.23186e-08, 0.0542417, 0.986339)
+bones/14/scale = Vector3(1, 1, 1)
+bones/16/position = Vector3(0.00256038, 0.00106064, 0.00797866)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/position = Vector3(-1.12396e-09, 0.00834821, 1.27687e-09)
+bones/17/rotation = Quaternion(-0.191896, -0.000358979, 0.0407928, 0.980567)
+bones/18/position = Vector3(5.53052e-10, 0.00738373, -1.2258e-09)
+bones/18/rotation = Quaternion(-0.211765, -0.00306495, 0.0875958, 0.973382)
+bones/18/scale = Vector3(1, 1, 1)
+bones/20/position = Vector3(-0.00256037, 0.00106064, 0.00797867)
+bones/20/rotation = Quaternion(0.866221, -0.0691792, -0.152332, 0.470819)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/position = Vector3(-3.57601e-10, 0.00834821, 4.0228e-10)
+bones/21/rotation = Quaternion(-0.175665, 0.00024075, 0.0873494, 0.980567)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/position = Vector3(1.70003e-10, 0.00738372, -1.5382e-09)
+bones/22/rotation = Quaternion(-0.220316, 0.00303921, 0.0630755, 0.973382)
+bones/22/scale = Vector3(1, 1, 1)
+bones/24/position = Vector3(7.54482e-11, -0.000272745, 6.32904e-05)
+bones/24/rotation = Quaternion(0.999821, 4.51062e-09, -1.43024e-06, -0.0189183)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/position = Vector3(4.40116e-15, 0.00472844, 3.19083e-09)
+bones/25/rotation = Quaternion(-1.11593e-09, 2.04466e-12, 3.23786e-14, 1)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/position = Vector3(-1.61173e-14, 0.00472844, -6.17232e-09)
+bones/26/rotation = Quaternion(2.48032e-07, -1.49739e-13, -4.26432e-13, 1)
+bones/26/scale = Vector3(1, 1, 1)
+
+[node name="HORSE" parent="Horse/ARM/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rgfrw")
+surface_material_override/1 = SubResource("StandardMaterial3D_f4qwr")
+surface_material_override/2 = SubResource("StandardMaterial3D_vervv")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Horse")
+tree_root = SubResource("AnimationNodeBlendTree_18142")
+anim_player = NodePath("../Horse/AnimationPlayer")
+parameters/RUN_SPEED/scale = 1.0
+parameters/TimeSeek/seek_request = -1.0
+parameters/WALK_SPEED/blend_amount = 1.0
+
+[editable path="Horse"]
