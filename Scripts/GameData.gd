@@ -7,8 +7,10 @@ var VARIANCE = true
 var ANIMATION_SCALE = 0.5
 var BET_STEP = 50
 var MIN_BET = 50
-var MAX_BET = 1000
+var MAX_BET = 750
 var HORSES_PER_RACE = 6
+var IS_DEBUG = false
+var PLANTED_ITEMS_PER_ROUND = 1000
 
 
 func get_properties() -> Dictionary[String, String]:

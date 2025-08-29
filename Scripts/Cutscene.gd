@@ -16,6 +16,20 @@ func swapToCameraTwo():
 	
 func swapToFinalCamera():
 	$Camera3D.clear_current()
+	get_parent().HORSE_CAMERA.make_current()
 	
 func endCutscene():
+	playGunshot()
 	onCutsceneEnd.emit()
+	
+func playGunshot():
+	$AudioStreamPlayer.play()
+
+func playHorn():
+	$Horn.play()
+
+func playAnnouncer():
+	$Announcer.play()
+	
+func playMicOwie():
+	$MicOwie.play()

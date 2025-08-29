@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dkucn7sptk6dc"]
+
+[resource]
+resource_name = "Pavement"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.0759428, 0.0759428, 0.0759428, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

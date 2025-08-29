@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://cl02e0rtsc8qo"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://cl02e0rtsc8qo"]
 
 [ext_resource type="StyleBox" uid="uid://u41b2hdnm61n" path="res://Themes/primary_color.tres" id="1_m7ogn"]
 [ext_resource type="FontFile" uid="uid://br3ivsykeej7a" path="res://Themes/CQ Mono.otf" id="2_wkudg"]
@@ -99,6 +99,21 @@ corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8g42"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_7nq1i")
@@ -117,3 +132,4 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_in8jq")
 Slider/styles/grabber_area = SubResource("StyleBoxFlat_pmcwn")
 Slider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_dd3um")
 Slider/styles/slider = SubResource("StyleBoxFlat_h1n6v")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_g8g42")

@@ -21,6 +21,7 @@ GameData="*res://Scripts/GameData.gd"
 Game="*res://Scripts/Managers/Game.gd"
 Audio="*res://Scripts/Managers/Audio.gd"
 HorseFactory="*res://Scripts/Managers/HorseFactory.gd"
+ItemFactory="*res://Scripts/Managers/ItemFactory.gd"
 
 [debug_draw_3d]
 

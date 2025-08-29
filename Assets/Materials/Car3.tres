@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://btofr1cokcw1t"]
+
+[ext_resource type="Texture2D" uid="uid://b4ed8cwmn5imc" path="res://Assets/Materials/nissanOverlay.png" id="1_8l6y3"]
+[ext_resource type="Material" uid="uid://byis14mcym5gw" path="res://Assets/Materials/Car4.tres" id="2_rjawe"]
+
+[resource]
+next_pass = ExtResource("2_rjawe")
+transparency = 1
+albedo_texture = ExtResource("1_8l6y3")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://86v5b7h7wv2v"]
+
+[ext_resource type="Texture2D" uid="uid://dqn8jrllvt8dn" path="res://Assets/Sprites/Items/UNKNOWN.png" id="1_0axq0"]
+[ext_resource type="Script" uid="uid://cs6oe00nqt2w1" path="res://Scripts/UI/ItemButton.gd" id="2_0axq0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t31ro"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 18.0
+bg_color = Color(0.611765, 0.231373, 0.231373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snkph"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 18.0
+bg_color = Color(0.266895, 0.162951, 0.153392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_8twrv"]
+font_color = Color(1, 0.828744, 0.305717, 1)
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+tooltip_text = "Gives the horse more energy."
+theme_override_styles/hover = SubResource("StyleBoxFlat_t31ro")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_snkph")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t31ro")
+icon = ExtResource("1_0axq0")
+autowrap_mode = 1
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("2_0axq0")
+metadata/_custom_type_script = "uid://cptvmuyt6and4"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "200G"
+label_settings = SubResource("LabelSettings_8twrv")
+horizontal_alignment = 1
+vertical_alignment = 2

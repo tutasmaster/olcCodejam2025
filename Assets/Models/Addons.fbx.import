@@ -32,7 +32,34 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Leaves": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/CircuitMaterials/Leaves.tres"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/CircuitMaterials/Material.tres"
+},
+"Material.003": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/CircuitMaterials/Material.003.tres"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/CircuitMaterials/Material.004.tres"
+},
+"OLD_COPPER": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/CircuitMaterials/OLD_COPPER.tres"
+},
+"Pavement": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/CircuitMaterials/Pavement.tres"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
